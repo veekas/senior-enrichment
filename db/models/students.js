@@ -20,7 +20,7 @@ const Students = db.define('students', {
   profile_picture: {
     type: Sequelize.STRING,
     defaultValue: '.../public/images/kids-playing-wh.png'
-  }
+  } // add a campus thing here, or do I add it as a query in the model
 }, {
     getterMethods: {
       name() {
