@@ -1,43 +1,32 @@
 'use strict';
 
 import React, { Component } from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import NavBar from './NavBar';
-import Footer from './Footer';
+// import Footer from './Footer';
 import Students from './Students';
 import Campuses from './Campuses';
+import NewStudent from './NewStudent';
+import NewCampus from './NewCampus';
+import Home from './Home';
 
-export default class WinterJokes extends Component {
-  // constructor() {
-  //   super();
-  // }
-
-  // componentDidMount() {
-  // }
-
-  // thing1() {
-  //   this.setState({
-  //   });
-  // }
-
-  // thing2() {
-  //   this.setState({
-
-    // });
-  // }
+export default class Root extends Component {
 
   render() {
     return (
       <div>
-      <h1>is this working</h1>
         <NavBar />
-        <Router>
-          <Route path='/students' component={Students} />
-          <Route path='/new-student' component={NewStudent} />
-          <Route path='/campuses' component={Campuses} />
-          <Route path='/new-campus' component={NewCampus} />
-        </Router>
-        <Footer />
+        <div className='main'>
+          <Switch>
+            <Route path='/home' component={Home} />
+            <Route exact path='/students' component={Students} />
+            <Route exact path='/new-student' component={NewStudent} />
+            <Route exact path='/campuses' component={Campuses} />
+            <Route exact path='/new-campus' component={NewCampus} />
+            <Redirect to='/home' />
+          </Switch>
+        </div>
+        {/*<Footer />*/}
       </div>
     );
   }

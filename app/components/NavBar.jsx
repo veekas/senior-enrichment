@@ -11,12 +11,12 @@ export default function NavBar() {
           Home
         </button>
       </NavLink>
-      <NavLink to='/' activeClassName='active'>
+      <NavLink to='/campuses' activeClassName='active'>
         <button>
           Campuses
         </button>
       </NavLink>
-      <NavLink to='/' activeClassName='active'>
+      <NavLink to='/students' activeClassName='active'>
         <button>
           Students
         </button>

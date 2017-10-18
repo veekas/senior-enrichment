@@ -5,18 +5,14 @@ const Students = require('./db/models/students');
 const students = [
   { first_name: 'veekas', last_name: 'shrivastava', email: 'some1@email.com', campusId: 1 },
   { first_name: 'erin', last_name: 'hellmann', email: 'some2@email.com', campusId: 2 },
-  { first_name: 'truman', last_name: 'osito', email: 'some3@email.com', campusId: 3 },
-  { first_name: 'eleanor', last_name: 'amy', email: 'some4@email.com', campusId: 4 }
+  { first_name: 'truman', last_name: 'osito', email: 'some3@email.com', campusId: 1 },
+  { first_name: 'eleanor', last_name: 'amy', email: 'some4@email.com', campusId: 2 }
 ];
 
 const campuses = [{
   name: 'tempe',
 }, {
-  name: 'scottsdale',
-}, {
   name: 'phoenix',
-}, {
-  name: 'chandler',
 }];
 
 
