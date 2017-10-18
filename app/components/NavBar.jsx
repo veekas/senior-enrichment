@@ -24,3 +24,15 @@ export default function NavBar() {
     </div>
   );
 }
+
+/*      <NavLink to='/campuses/new' activeClassName='active'>
+        <button>
+          Add Campus
+        </button>
+      </NavLink>
+      <NavLink to='/students/new' activeClassName='active'>
+        <button>
+          Add Student
+        </button>
+      </NavLink>
+*/

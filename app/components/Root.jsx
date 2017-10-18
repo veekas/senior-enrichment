@@ -3,12 +3,14 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import NavBar from './NavBar';
-// import Footer from './Footer';
+import Footer from './Footer';
 import Students from './Students';
 import Campuses from './Campuses';
 import NewStudent from './NewStudent';
 import NewCampus from './NewCampus';
-import Home from './Home';
+import Dashboard from './Dashboard';
+import SingleStudent from './SingleStudent';
+import SingleCampus from './SingleCampus';
 
 export default class Root extends Component {
 
@@ -18,15 +20,17 @@ export default class Root extends Component {
         <NavBar />
         <div className='main'>
           <Switch>
-            <Route path='/home' component={Home} />
+            <Route exact path='/dashboard' component={Dashboard} />
             <Route exact path='/students' component={Students} />
-            <Route exact path='/new-student' component={NewStudent} />
+            <Route exact path='/students/new' component={NewStudent} />
+            <Route       path='/students/:studentId' component={SingleStudent} />
             <Route exact path='/campuses' component={Campuses} />
-            <Route exact path='/new-campus' component={NewCampus} />
-            <Redirect to='/home' />
+            <Route exact path='/campuses/new' component={NewCampus} />
+            <Route       path='/campuses/:campusId' component={SingleCampus} />
+            <Redirect to='/dashboard' />
           </Switch>
         </div>
-        {/*<Footer />*/}
+        <Footer />
       </div>
     );
   }
