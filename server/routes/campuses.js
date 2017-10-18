@@ -1,10 +1,12 @@
+'use strict';
+
 const router = require('express').Router();
 const { Campuses } = require('../../db/models');
 
 // GET - all campuses
 
 router.get('/', (req, res, next) => {
-  Campuses.findAll()
+  Campuses.findAll({})
     .then(campuses => {
       res.json(campuses);
     })
@@ -47,4 +49,4 @@ router.put('./studentId', (req, res, next) => {
     .then(() => res.status(204).send('Campus has been deleted from the database'));
 });
 
-module.exports = Campuses;
+module.exports = router;

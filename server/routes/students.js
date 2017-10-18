@@ -1,19 +1,14 @@
+'use strict';
+
 const router = require('express').Router();
 const { Students } = require('../../db/models');
 
 // GET - all students
 
 router.get('/', (req, res, next) => {
-  Students.findAll()
+  Students.findAll({})
     .then(students => res.json(students))
     .catch(next);
-});
-
-// GET - a student by id
-// makes more sense to check for student first before get
-
-router.get('/:studentId', (req, res, next) => {
-  res.json(req.students);
 });
 
 // POST - new student
@@ -28,7 +23,27 @@ router.post('/', (req, res, next) => {
   })
     .spread((student, created) => {
       created ? res.json(student) : res.send('This student already exists.');
-    });
+    })
+    .catch(next);
+});
+
+router.param('studentId', (req, res, next, studentId) => {
+  Students.findById(studentId)
+    .then(student => {
+      if (!student) {
+        const err = new Error('Student does not exist in the database.');
+        err.status = 404;
+      }
+      req.student = student;
+      next(err);
+    })
+    .catch(next);
+});
+
+// GET - a student by id
+
+router.get('/:studentId', (req, res, next) => {
+  res.json(req.students);
 });
 
 // PUT - updated student info for one student
@@ -49,4 +64,4 @@ router.put('./:studentId', (req, res, next) => {
     .catch(next);
 });
 
-module.exports = Students;
+module.exports = router;

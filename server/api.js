@@ -1,13 +1,15 @@
 'use strict';
-const express = require('express');
-const router = express.Router();
-const db = require('../db');
 
-router.use('/students', require('./routes/students.js'));
-router.use('/campuses', require('./routes/campuses.js'));
+const api = require('express').Router();
+const { Campuses, Students } = require('../db/models');
 
-router.use(function (err, req, res, next) {
+api.use('/students', require('./routes/students.js'));
+api.use('/campuses', require('./routes/campuses.js'));
+
+api.use(function (err, req, res, next) {
 	res.status(err.status || 500).send(err.message || 'internal error');
 });
 
-module.exports = router;
+// Students.belongsTo(Campuses);
+
+module.exports = api;
