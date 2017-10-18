@@ -1,20 +1,17 @@
 'use strict';
 
 import { combineReducers } from 'redux';
-import campusReducers from './campusReducers';
-import studentReducers from './studentReducers';
+import campuses from './campusReducer';
+import students from './studentReducer';
 import auth from './auth';
 
 const initialState = {};
 
-export const rootReducer = {
-  campusReducers,
-  studentReducers
-};
+export default combineReducers({
+  campuses,
+  students,
+  auth
+});
 
-/*
-switch (action.type) {
-    default:
-      return state;
-    }
-      */
+export * from './campusReducer';
+export * from './studentReducer';

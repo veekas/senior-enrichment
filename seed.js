@@ -1,3 +1,7 @@
+/* use the random puppy generator
+https://www.npmjs.com/package/random-puppy
+*/
+
 const db = require('./db');
 const Campuses = require('./db/models/campuses');
 const Students = require('./db/models/students');
