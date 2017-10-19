@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { updateStudentProfile } from '../reducers/students';
+import { updateStudentInfo } from '../reducers/student';
 
-class UpdateStudent extends Component {
+class EditStudent extends Component {
 
   constructor(props) {
     super(props);
@@ -13,42 +13,38 @@ class UpdateStudent extends Component {
     event.preventDefault();
     const name = event.target.name.value;
     const email = event.target.email.value;
-    const campusId = +event.target.campus.value;
-    const student = { campusId, id: this.props.id };
+    const campusId = Number(event.target.campus.value);
+    const newStudentInfo = { campusId, id: this.props.id };
 
-    // Only Add Optional Props that are valid
-    if (name) student.name = name;
-    if (email) student.email = email;
-    if (major) student.major = major;
+    if (name) newStudentInfo.name = name;
+    if (email) newStudentInfo.email = email;
 
-    console.log('Info', student);
-    this.props.updateStudentProfile(student);
+    console.log('Info', newStudentInfo);
+    this.props.updateStudent(newStudentInfo);
     this.props.history.push('/students');
 
   }
 
   render() {
+    const campuses = this.props.campuses;
     return (
       <div>
-        <h3>Edit Student</h3>
-        <form onSubmit={this.submitHandler}>
+        <h3 className="formHeader">Edit Student</h3>
+        <h4>Update information below:</h4>
+        <form id="form" onSubmit={this.submitHandler}>
           <div>
             <label htmlFor="name">Name</label>
-            <input name="name" type="text" id="inputName" aria-describedby="emailHelp"></input>
+            <input name="name" type="text" id="inputName"></input>
           </div>
           <div>
             <label htmlFor="exampleInputEmail1">Email address</label>
             <input name="email" type="email" id="exampleInputEmail1"></input>
           </div>
           <div>
-            <label htmlFor="major">Major</label>
-            <input name="major" type="text" id="inputMajor"></input>
-          </div>
-          <div>
             <label htmlFor="exampleSelect1">Campus</label>
             <select name="campus" id="exampleSelect1">
               {
-                this.props.campuses.map((campus) => {
+                campuses.map((campus) => {
                   return (<option key={`${campus.id}`} value={`${campus.id}`}>{`${campus.name}`}</option>);
                 })
               }
@@ -67,11 +63,11 @@ const mapStateToProps = (state) => {
 
 const mapDispatch = (dispatch) => {
   return {
-    updateStudentProfile: function (newInfo) {
-      dispatch(updateStudentProfile(newInfo));
+    updateStudent: function (newInfo) {
+      dispatch(updateStudentInfo(newInfo));
     }
   };
 };
 
 
-export default connect(mapStateToProps, mapDispatch)(UpdateStudent);
+export default connect(mapStateToProps, mapDispatch)(EditStudent);

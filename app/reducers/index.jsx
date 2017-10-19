@@ -1,12 +1,5 @@
-
-
 import { combineReducers } from 'redux';
-import campuses from './campuses';
-import students from './students';
-// import auth from './auth';
+import campuses from './campus';
+import students from './student';
 
-export default combineReducers({
-  campuses,
-  students
-  // auth
-});
+export default combineReducers({ students, campuses });
