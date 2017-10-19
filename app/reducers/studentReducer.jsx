@@ -33,8 +33,7 @@ export function removeStudent (studentId) {
 
 /* ------------------------------ REDUCERS ------------------------------ */
 
-export default function studentReducer(
-  students = [], action) {
+export default function studentReducer(students = [], action) {
   switch (action.type) {
 
     case ALL_STUDENTS:
