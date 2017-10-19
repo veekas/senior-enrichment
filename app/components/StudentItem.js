@@ -25,16 +25,16 @@ class StudentItem extends React.Component {
 
     return (
       <tr key={student.id}>
-        <th className="th">{student.id}</th>
-        <th className="th">{student.name}</th>
-        <th className="th">{student.email}</th>
-        <th className="th">{campus && campus.name}</th>
         <th>
-          <button
-            onClick={this.removeStudentCallBack}
-            className="btn btn-default"
-          >x
-          </button>
+          <NavLink to={`/students/${student.id}`}>
+            {student.id}
+          </NavLink>
+        </th>
+        <th>{student.name}</th>
+        <th>{student.email}</th>
+        <th>{campus && campus.name}</th>
+        <th>
+          <button onClick={this.removeStudentCallBack}>X</button>
         </th>
       </tr>
     );

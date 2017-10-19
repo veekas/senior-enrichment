@@ -16,21 +16,21 @@ class StudentDetail extends Component {
     return (
       <div>
         <h1>{student && student.name}</h1>
-        <table className="table">
+        <table>
           <thead>
             <tr>
-              <th className="th">ID</th>
-              <th className="th">Name</th>
-              <th className="th">Email</th>
-              <th className="th">Campus</th>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Campus</th>
             </tr>
           </thead>
           <tbody>
             <tr key={student.id}>
-              <th className="th">{student.id}</th>
-              <th className="th">{student.name}</th>
-              <th className="th">{student.email}</th>
-              <th className="th"><NavLink className="campusLink" to={`/campuses/${campus.id}`}>{campus && campus.name}</NavLink></th>
+              <th>{student.id}</th>
+              <th>{student.name}</th>
+              <th>{student.email}</th>
+              <th><NavLink className="campusLink" to={`/campuses/${campus.id}`}>{campus && campus.name}</NavLink></th>
             </tr>
           </tbody>
         </table>

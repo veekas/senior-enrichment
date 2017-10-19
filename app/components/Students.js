@@ -15,16 +15,16 @@ class Students extends Component {
       <div>
         <h3> Students </h3>
         <NavLink to="/add-students">
-          <button className="btn btn-default" id="plus">Add Student +</button>
+          <button id="plus">Add Student</button>
         </NavLink>
         <div id="students">
-          <table className="table">
+          <table>
             <thead>
               <tr>
-                <th className="th"> ID</th>
-                <th className="th">Name</th>
-                <th className="th">Email</th>
-                <th className="th">Campus</th>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Campus</th>
               </tr>
             </thead>
             <tbody>
