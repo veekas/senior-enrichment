@@ -1,45 +1,54 @@
-'use strict';
 
-import React from 'react';
+
+import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { deleteStudent } from '../reducers/students';
 
-export default class StudentItem extends React.Component {
+class StudentItem extends React.Component {
   constructor(props) {
-    super(props)
-    // this.handleDelete = this.handleDelete.bind(this)
+    super(props);
+    this.deleteStudent = this.deleteStudent.bind(this);
   }
 
-  // handleDelete(event) {
-  //   event.preventDefault();
-  //   confirm(`This is an irreversible action. Are you sure you want to delete ${this.props.student.first_name}'s entire record?`) &&
-  //   this.props.deleteStudent(this.props.id);
-  // };
+  deleteStudent(event) {
+    const { deleteStudent, student } = this.props;
+    event.stopPropagation();
+    deleteStudent(student.id);
+  }
 
   render() {
-    console.log('these are props', this.props)
 
-    let student = this.props.student
+    const student = this.props.student;
+    const campuses = this.props.campuses;
+    if (!student || !campuses) return null;
+    const campusId = +student.campusId;
+    const campus = campuses.find((campus) => campus.id === campusId);
 
     return (
-        <tr key={student.id}>
-          <td>
-            <NavLink to={`/students/${student.id}`}>
-              {student.id}
-            </NavLink>
-          </td>
-          <td>{student.first_name}</td>
-          <td>{student.last_name}</td>
-          <td>{student.campusId}</td>
-          {/*<td>
-          <button onClick={this.handleDelete}>X</button>
-          </td>*/}
-          <td>
-            <button onClick={(evt) => {
-              evt.preventDefault();
-              confirm('really?') && this.props.deleteStudent(student.id);
-            }}>X</button>
-          </td>
-        </tr>
-      )
+      <tr key={student.id}>
+        <th>
+          <NavLink to={`/students/${student.id}`}>
+            {student.id}
+          </NavLink>
+        </th>
+        <th>{student.name}</th>
+        <th>{campus && campus.name}</th>
+        <th>
+          <button
+            onClick={this.deleteStudent}>
+            X
+          </button>
+        </th>
+      </tr>
+    );
   }
 }
+
+const mapStateToProps = (state) => {
+  return { campuses: state.campuses };
+};
+
+const mapDispatchToProps = { deleteStudent };
+
+export default connect(mapStateToProps, mapDispatchToProps)(StudentItem);

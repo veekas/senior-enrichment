@@ -1,4 +1,4 @@
-'use strict';
+
 
 /* use the random puppy generator
 https://www.npmjs.com/package/random-puppy

@@ -1,4 +1,4 @@
-'use strict';
+
 
 const Sequelize = require('sequelize');
 const db = require('../index');
@@ -6,14 +6,21 @@ const db = require('../index');
 const Students = db.define('students', {
   first_name: {
     type: Sequelize.STRING,
-    allowNull: false
+    allowNull: false,
+    validate: {
+      notEmpty: true
+    }
   },
   last_name: {
     type: Sequelize.STRING,
-    allowNull: false
+    allowNull: false,
+    validate: {
+      notEmpty: true
+    }
   },
   email: {
     type: Sequelize.STRING,
+    unique: true,
     validate: {
       isEmail: true
     }
@@ -21,7 +28,7 @@ const Students = db.define('students', {
   profile_picture: {
     type: Sequelize.STRING,
     defaultValue: '.../public/images/kids-playing-wh.png'
-  } // add a campus thing here, or do I add it as a query in the model
+  }
 }, {
     getterMethods: {
       name() {

@@ -1,8 +1,8 @@
-'use strict';
+
 
 import { combineReducers } from 'redux';
-import campuses from './campusReducer';
-import students from './studentReducer';
+import campuses from './campuses';
+import students from './students';
 // import auth from './auth';
 
 export default combineReducers({
