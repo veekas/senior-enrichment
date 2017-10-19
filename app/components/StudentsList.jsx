@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import StudentItem from './StudentItem';
 
 export default class extends React.Component {
 
@@ -29,14 +30,7 @@ export default class extends React.Component {
           <tbody>
               { // eventually refactor to move one Student instance to own module
                 this.props.students.map((student) => (
-                  <tr key={student.id}>
-                    <td>{student.id}</td>
-                    <td>{student.first_name}</td>
-                    <td>{student.last_name}</td>
-                    <td>{student.email}</td>
-                    <td>{student.campusId}</td>
-                    {/* delete*/}
-                  </tr>
+                  <StudentItem key={student.id} student={student} />
                 ))
               }
             </tbody>
