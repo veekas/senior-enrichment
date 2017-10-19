@@ -3,14 +3,12 @@
 import { combineReducers } from 'redux';
 import campuses from './campusReducer';
 import students from './studentReducer';
-import auth from './auth';
-
-const initialState = {};
+// import auth from './auth';
 
 export default combineReducers({
   campuses,
   students,
-  auth
+  // auth
 });
 
 export * from './campusReducer';

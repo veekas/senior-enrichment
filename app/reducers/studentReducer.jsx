@@ -27,7 +27,7 @@ export function updateStudent (student) {
 }
 
 export function removeStudent (studentId) {
-  const action = { type: REMOVE_STUDENT, studentId };
+  const action = { type: REMOVE_STUDENT, id: studentId };
   return action;
 }
 

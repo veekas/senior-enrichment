@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-export default function Campuses() {
+export default function CampusList() {
   return (
     <div>
       <h1>Campuses</h1>

@@ -1,3 +1,5 @@
+'use strict';
+
 /* use the random puppy generator
 https://www.npmjs.com/package/random-puppy
 */
@@ -42,6 +44,7 @@ const seed = () =>
       console.log(err.stack);
     })
     .then(() => {
+      console.log('Database successfully seeded.');
       db.close();
       return null;
     });

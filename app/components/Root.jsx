@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-d
 import NavBar from './NavBar';
 import Footer from './Footer';
 import StudentsList from '../containers/StudentsList';
-import Campuses from './Campuses';
+import CampusList from './CampusList';
 import NewStudent from './NewStudent';
 import NewCampus from './NewCampus';
 import Dashboard from './Dashboard';
@@ -24,7 +24,7 @@ export default class Root extends Component {
             <Route exact path='/students' component={StudentsList} />
             <Route exact path='/students/new' component={NewStudent} />
             <Route       path='/students/:studentId' component={SingleStudent} />
-            <Route exact path='/campuses' component={Campuses} />
+            <Route exact path='/campuses' component={CampusList} />
             <Route exact path='/campuses/new' component={NewCampus} />
             <Route       path='/campuses/:campusId' component={SingleCampus} />
             <Redirect to='/dashboard' />
