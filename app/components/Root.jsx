@@ -2,6 +2,8 @@
 
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+// import { withRouter } from 'react-router-dom';
+// import { connect } from 'react-redux';
 import NavBar from './NavBar';
 import Footer from './Footer';
 import StudentsList from '../containers/StudentsList';
@@ -12,7 +14,14 @@ import Home from './Home';
 import SingleStudent from './SingleStudent';
 import SingleCampus from './SingleCampus';
 
+import { showAllStudents } from '../reducers/studentReducer';
+// import { showAllCampuses } from '../reducers/campusReducer';
+
 export default class Root extends Component {
+  // componentDidMount() {
+  //   this.props.showAllStudents();
+  //   // this.props.showAllCampuses();
+  // }
 
   render() {
     return (
@@ -35,3 +44,10 @@ export default class Root extends Component {
     );
   }
 }
+
+// const mapDispatch = {
+//   showAllStudents,
+//   // showAllCampuses
+// };
+
+// export default withRouter(connect(null, mapDispatch)(Root));

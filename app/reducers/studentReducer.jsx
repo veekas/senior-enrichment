@@ -75,7 +75,11 @@ export const updateStudentProfile = (id, student) => dispatch => {
 };
 
 export const deleteStudent = id => dispatch => {
-  axios.post(`/api/students/${id}`)
-    .then(res => dispatch(removeStudent(res.data)))
+  return axios.delete(`/api/students/${id}`)
+    .then(res => {
+      if (res.status === 204) {
+        dispatch(removeStudent(id));
+      }
+    })
     .catch(err => console.error(`Deleting student: ${id} unsuccesful`, err));
 };

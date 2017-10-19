@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import StudentItem from './StudentItem';
+import StudentItem from '../containers/StudentItem';
 
 export default class extends React.Component {
 
@@ -11,7 +11,6 @@ export default class extends React.Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <div>
         <h1>Students</h1>
@@ -22,7 +21,6 @@ export default class extends React.Component {
                 <th>ID</th>
                 <th>First Name</th>
                 <th>Last Name</th>
-                <th>Email</th>
                 <th>CampusId</th>
                 <th>Delete</th>
               </tr>

@@ -12,6 +12,9 @@ const students = [
   { first_name: 'veekas', last_name: 'shrivastava', email: 'some1@email.com', campusId: 1 },
   { first_name: 'erin', last_name: 'hellmann', email: 'some2@email.com', campusId: 2 },
   { first_name: 'truman', last_name: 'osito', email: 'some3@email.com', campusId: 1 },
+  { first_name: 'shivani', last_name: 'shrivastava', email: 'some9@email.com', campusId: 1 },
+  { first_name: 'jenny', last_name: 'hellmann', email: 'some8@email.com', campusId: 2 },
+  { first_name: 'udy', last_name: 'shrivastava', email: 'some7@email.com', campusId: 1 },
   { first_name: 'eleanor', last_name: 'amy', email: 'some4@email.com', campusId: 2 }
 ];
 

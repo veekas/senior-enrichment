@@ -33,34 +33,34 @@ router.param('studentId', (req, res, next, studentId) => {
       if (!student) {
         const err = new Error('Student does not exist in the database.');
         err.status = 404;
+        next(err);
       }
       req.student = student;
-      next(err);
+      next();
     })
-    .catch(next);
 });
 
 // GET - a student by id
 
 router.get('/:studentId', (req, res, next) => {
-  res.json(req.students);
+  res.json(req.student);
 });
 
 // PUT - updated student info for one student
 
-router.put('./:studentId', (req, res, next) => {
+router.put('/:studentId', (req, res, next) => {
   req.student
-    .update(res.body)
+    .update(req.body)
     .then(student => res.json(student))
     .catch(next);
 });
 
 // DELETE - a student
 
-router.put('./:studentId', (req, res, next) => {
+router.delete('/:studentId', (req, res, next) => {
   req.student
     .destroy()
-    .then(() => res.status(204).send('Student has been deleted from the database.').end())
+    .then(() => res.status(204).send(studentId).end())
     .catch(next);
 });
 
