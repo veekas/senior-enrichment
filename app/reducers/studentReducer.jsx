@@ -56,10 +56,10 @@ export default function studentReducer(students = [], action) {
 
 /* ---------------------------- DISPATCHERS ----------------------------- */
 
-export const showAllStudents = dispatch => {
-  axios.get('/api/students')
+export const showAllStudents = students => dispatch => {
+  axios.get('/api/students', students)
     .then(res => dispatch(allStudents(res.data)))
-    .catch(err => console.error(`Finding all students: ${students} unsuccesful`, err));
+    .catch(err => console.error(`Unable to show all students`, err))
 };
 
 export const createNewStudent = student => dispatch => {

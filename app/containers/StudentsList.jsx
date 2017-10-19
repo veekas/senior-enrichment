@@ -3,14 +3,14 @@
 import React from 'react'; // , { Component }
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { showAllStudents, deleteStudent, createNewStudent } from '../reducers';
+import { showAllStudents, deleteStudent, createNewStudent } from '../reducers/studentReducer';
 import { combineReducers } from '../reducers';
 import Students from '../components/StudentsList';
 
 const mapStateToProps = state => { return { students: state.students } };
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  showAllStudents() { dispatch(showAllStudents); },
+  showAllStudents() { dispatch(showAllStudents()); },
   deleteStudent(studentId) { dispatch(deleteStudent(studentId)); }
 });
 

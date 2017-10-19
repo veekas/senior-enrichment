@@ -8,7 +8,7 @@ import StudentsList from '../containers/StudentsList';
 import CampusList from './CampusList';
 import NewStudent from './NewStudent';
 import NewCampus from './NewCampus';
-import Dashboard from './Dashboard';
+import Home from './Home';
 import SingleStudent from './SingleStudent';
 import SingleCampus from './SingleCampus';
 
@@ -20,14 +20,14 @@ export default class Root extends Component {
         <NavBar />
         <div className='main'>
           <Switch>
-            <Route exact path='/dashboard' component={Dashboard} />
+            <Route exact path='/home' component={Home} />
             <Route exact path='/students' component={StudentsList} />
             <Route exact path='/students/new' component={NewStudent} />
             <Route       path='/students/:studentId' component={SingleStudent} />
             <Route exact path='/campuses' component={CampusList} />
             <Route exact path='/campuses/new' component={NewCampus} />
             <Route       path='/campuses/:campusId' component={SingleCampus} />
-            <Redirect to='/dashboard' />
+            <Redirect to='/home' />
           </Switch>
         </div>
         <Footer />

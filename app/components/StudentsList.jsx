@@ -5,6 +5,10 @@ import { NavLink } from 'react-router-dom';
 
 export default class extends React.Component {
 
+  componentDidMount() {
+    this.props.showAllStudents();
+  }
+
   render() {
     console.log(this.props)
     return (

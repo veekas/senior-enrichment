@@ -9,7 +9,7 @@ export default function Footer() {
           <p className="footer-company-motto">Every Student Can Learn.</p>
 
           <p className="footer-links">
-            <a href="/">Dashboard</a>
+            <a href="/">Home</a>
             ·
             <a href="/campuses">Campuses</a>
             ·

@@ -7,9 +7,6 @@ import students from './studentReducer';
 
 export default combineReducers({
   campuses,
-  students,
+  students
   // auth
 });
-
-export * from './campusReducer';
-export * from './studentReducer';
