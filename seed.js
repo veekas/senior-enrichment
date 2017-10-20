@@ -10,59 +10,48 @@ const {
 
 const campusData = [
   {
-    name: 'dsfsdg',
-    imageURL: 'http://www.lorempixel.com/200/200'
+    name: 'Tempe'
   },
   {
-    name: 'thtyjtk',
-    imageURL: 'http://www.lorempixel.com/200/200'
+    name: 'Scottsdale'
   },
   {
-    name: 'ytjhgrth',
-    imageURL: 'http://www.lorempixel.com/200/200'
+    name: 'Phoenix'
   },
   {
-    name: 'rgergre',
-    imageURL: 'http://www.lorempixel.com/200/200'
-  }
-];
+    name: 'Chandler'
+  }];
 
 const studentData = [
   {
-    name: 'fdvkjdnv fdjnv',
+    name: 'Veekas Shrivastava',
     campusId: 1,
-    major: 'efww',
-    email: 'erkdsjgoz@gmail.com'
+    email: 'veekas.shrivastava@fakemail.com'
   },
   {
-    name: 'dfknb fdbnd',
+    name: 'Erin Hellmann',
     campusId: 2,
-    major: 'Mwefwef',
-    email: 'kdsjgoz@gmail.com'
+    email: 'erin.hellmann@fakemail.com'
   },
   {
-    name: 'gmto ormgoier',
+    name: 'Truman Osito',
     campusId: 2,
-    major: 'Ewefwef',
-    email: 'tkdsjgoz@gmail.com'
+    email: 'truman.osito@fakemail.com'
   },
   {
-    name: 'wef obot',
+    name: 'Eleanor Amy',
     campusId: 3,
-    major: 'efefg',
-    email: 'chrkdsjgoz@gmail.com'
+    email: 'eleanor.amy@fakemail.com'
   },
   {
-    name: 'vkjdfnv def',
+    name: 'Shivani Shrivastava',
     campusId: 4,
-    major: 'wefwef',
-    email: 'rykdsjgoz@gmail.com'
+    email: 'shivani.shrivastava@fakemail.com'
   },
   {
-    name: 'dd asodmaodf',
+    name: 'Jenny Hellmann',
     campusId: 1,
-    major: 'wefwef',
-    email: 'sunkdsjgoz@gmail.com'
+    email: 'jenny.hellmann@fakemail.com'
   }
 ];
 

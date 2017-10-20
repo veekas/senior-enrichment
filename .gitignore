@@ -10,3 +10,6 @@ npm-debug.log
 
 # Seed files
 seed.js
+
+# why does this keep trying to add itself?
+.DS_Store
