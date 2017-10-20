@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
+import { connect } from 'react-redux';
+
+import Home from './Home';
 import Navbar from './Navbar';
 import Footer from './Footer';
+
 import Campus from './Campus';
+import AddCampus from './AddCampus';
+import SingleCampus from './SingleCampus';
+
 import Students from './Students';
 import AddStudent from './AddStudent';
-import AddCampus from './AddCampus';
 import StudentDetail from './StudentDetail';
-import SingleCampus from './SingleCampus';
-import Home from './Home';
-import { connect } from 'react-redux';
+
 import { fetchStudents } from '../reducers/student';
 import { fetchCampuses } from '../reducers/campus';
 
