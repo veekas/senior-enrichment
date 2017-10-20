@@ -30,7 +30,7 @@ class EditStudent extends Component {
     return (
       <div>
         <h3 className="formHeader">Edit Student</h3>
-        <h4>Update information below:</h4>
+        <br />
         <form id="form" onSubmit={this.submitHandler}>
           <div>
             <label htmlFor="name">Name</label>
@@ -50,6 +50,7 @@ class EditStudent extends Component {
               }
             </select>
           </div>
+          <br />
           <button type="submit">Submit</button>
         </form>
       </div>

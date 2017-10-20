@@ -10,10 +10,12 @@ class Campuses extends Component {
     return (
       <div>
         <h3>Campuses
-        <NavLink to="/add-campus">
-            <button id="campusBtn">Add Campus</button>
-          </NavLink>
         </h3>
+        <br />
+        <NavLink to="/add-campus">
+          <button id="campusBtn">Add Campus</button>
+        </NavLink>
+        <br />  <br /> <br />  <br />
         <div id="campuses">
           {
             campuses.map((campus) => {

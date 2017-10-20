@@ -27,6 +27,7 @@ class EditCampus extends Component {
     return (
       <div>
         <h3>Edit Campus</h3>
+        <br />
         <form id="form" onSubmit={this.submitHandler}>
           <div>
             <label htmlFor="name">Name</label>
@@ -36,6 +37,7 @@ class EditCampus extends Component {
             <label htmlFor="exampleInputEmail1">Image URL</label>
             <input name="imgURL" type="text"></input>
           </div>
+          <br />
           <button type="submit">Submit</button>
         </form>
       </div>

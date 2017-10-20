@@ -16,6 +16,7 @@ class StudentDetail extends Component {
     return (
       <div>
         <h1>{student && student.name}</h1>
+        <br />  <br />
         <table>
           <thead>
             <tr>
@@ -25,6 +26,7 @@ class StudentDetail extends Component {
               <th>Campus</th>
             </tr>
           </thead>
+          <br />
           <tbody>
             <tr key={student.id}>
               <th>{student.id}</th>
@@ -34,6 +36,7 @@ class StudentDetail extends Component {
             </tr>
           </tbody>
         </table>
+        <br />  <br />
         <EditStudent id={student.id} history={this.props.history} />
       </div>
     );

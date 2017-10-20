@@ -27,7 +27,9 @@ class SingleCampus extends Component {
     return (
       <div>
         <h1>{campus && campus.name}</h1>
+        <br /><br />
         <h3> Students </h3>
+        <br />
         <div id="students">
           <table className="table">
             <thead>
@@ -47,7 +49,9 @@ class SingleCampus extends Component {
             </tbody>
           </table>
         </div>
+        <br />
         <button onClick={this.removeCampusCallBack} id="campusBtn" className="btn btn-danger">Delete Campus</button>
+        <br /> <br /><br />
         <div className="edit">
           <EditCampus campusId={campus.id} history={this.props.history} />
         </div>

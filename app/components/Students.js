@@ -14,9 +14,7 @@ class Students extends Component {
     return (
       <div>
         <h3> Students </h3>
-        <NavLink to="/add-students">
-          <button id="plus">Add Student</button>
-        </NavLink>
+        <br />  <br />
         <div id="students">
           <table>
             <thead>
@@ -25,8 +23,10 @@ class Students extends Component {
                 <th>Name</th>
                 <th>Email</th>
                 <th>Campus</th>
+                <th>Delete</th>
               </tr>
             </thead>
+            <br />
             <tbody>
               {
                 students.map((student) => (
@@ -36,6 +36,10 @@ class Students extends Component {
             </tbody>
           </table>
         </div>
+        <br />  <br />
+        <NavLink to="/add-students">
+          <button id="plus">Add Student</button>
+        </NavLink>
       </div>
     );
   }

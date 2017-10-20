@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from './Navbar';
+import Footer from './Footer';
 import Campus from './Campus';
 import Students from './Students';
 import AddStudent from './AddStudent';
@@ -23,6 +24,7 @@ class Root extends Component {
       <Router>
         <div id="app">
           <Navbar />
+          <br />  <br />
           <div id="content">
             <Switch>
               <Route exact path="/" component={Home} />
@@ -35,6 +37,8 @@ class Root extends Component {
               <Route component={Home} />
             </Switch>
           </div>
+          <br />  <br />  <br />  <br />
+          <Footer />
         </div>
       </Router>
     );
