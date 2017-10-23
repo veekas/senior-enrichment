@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
+import RaisedButton from 'material-ui/RaisedButton';
 
 import Home from './Home';
 import Navbar from './Navbar';
@@ -16,6 +17,10 @@ import StudentDetail from './StudentDetail';
 
 import { fetchStudents } from '../reducers/student';
 import { fetchCampuses } from '../reducers/campus';
+
+export const MyAwesomeReactComponent = () => (
+  <RaisedButton label="Default" />
+);
 
 class Root extends Component {
 
@@ -59,5 +64,6 @@ const mapDispatch = (dispatch) => {
     }
   };
 };
+
 
 export default connect(mapStateToProps, mapDispatch)(Root);
